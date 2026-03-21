@@ -200,6 +200,13 @@
       lastScroll = current;
     });
 
+    // Navbar show when cursor near top of screen
+    document.addEventListener('mousemove', (e) => {
+      if (e.clientY < 50) {
+        document.getElementById('navbar').style.top = '0';
+      }
+    });
+
     // Contact form — submit without redirecting
     document.getElementById('contact-form').addEventListener('submit', async function(e) {
       e.preventDefault();
