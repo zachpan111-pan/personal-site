@@ -45,11 +45,18 @@
   border-bottom: 1px solid rgba(201, 168, 76, 0.2);
   display: flex;
   justify-content: center;
-  gap: 28px;
+  align-items: center;
   padding: 14px 24px;
   z-index: 1000;
   transition: top 0.3s ease;
+}
+
+/* Desktop: links sit inline with spacing */
+#nav-links {
+  display: flex;
+  gap: 28px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 #navbar a {
@@ -75,31 +82,34 @@
   #navbar {
     justify-content: flex-end;
     padding: 12px 20px;
-    flex-wrap: nowrap;
   }
 
   #menu-toggle {
     display: block;
     background: none;
-    border: 1px solid rgba(201, 168, 76, 0.4);
+    border: 1px solid rgba(201, 168, 76, 0.5);
     color: #c9a84c;
-    font-size: 1.2rem;
-    padding: 4px 10px;
+    font-size: 1.3rem;
+    padding: 4px 12px;
     cursor: pointer;
     border-radius: 3px;
+    text-shadow:
+      0 0 8px rgba(201, 168, 76, 0.9),
+      0 0 20px rgba(201, 168, 76, 0.5);
+    box-shadow: 0 0 10px rgba(201, 168, 76, 0.2);
   }
 
+  /* Full-screen overlay when open */
   #nav-links {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: rgba(14, 12, 10, 0.98);
-    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    position: fixed;
+    inset: 0;
+    background-color: rgba(14, 12, 10, 0.97);
     flex-direction: column;
-    padding: 16px 24px;
-    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    z-index: 999;
   }
 
   #nav-links.open {
@@ -107,7 +117,8 @@
   }
 
   #nav-links a {
-    font-size: 0.85rem;
+    font-size: 1rem;
+    letter-spacing: 0.18em;
   }
 }
 
