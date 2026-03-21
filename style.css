@@ -1,3 +1,110 @@
+/* ── Sent Overlay ── */
+#sent-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #0e0c0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+#sent-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#sent-overlay p {
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 1.6;
+  color: #c9a84c;
+  text-shadow:
+    0 0 20px rgba(201, 168, 76, 0.8),
+    0 0 60px rgba(201, 168, 76, 0.4),
+    0 0 100px rgba(201, 168, 76, 0.2);
+  animation: pulse-gold 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-gold {
+  from { text-shadow: 0 0 20px rgba(201, 168, 76, 0.8), 0 0 60px rgba(201, 168, 76, 0.4); }
+  to   { text-shadow: 0 0 40px rgba(201, 168, 76, 1),   0 0 100px rgba(201, 168, 76, 0.6); }
+}
+
+/* ── Navbar ── */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(14, 12, 10, 0.95);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 14px 24px;
+  z-index: 1000;
+  transition: top 0.3s ease;
+  flex-wrap: wrap;
+}
+
+#navbar a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: color 0.2s;
+}
+
+#navbar a:hover {
+  color: #c9a84c;
+}
+
+/* ── Contact Form ── */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background-color: #161412;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  color: #d6d0c4;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #c9a84c;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #444;
+}
+
+form .btn {
+  align-self: flex-start;
+  margin-top: 6px;
+}
+
+.links-row {
+  margin-top: 24px;
+}
+
 /* ── Reset & Base ── */
 * {
   margin: 0;
@@ -15,7 +122,7 @@ body {
   font-family: 'Georgia', serif;
   max-width: 740px;
   margin: 0 auto;
-  padding: 60px 24px;
+  padding: 100px 24px 60px;
   line-height: 1.75;
 }
 

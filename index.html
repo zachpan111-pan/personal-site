@@ -5,15 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zachariah Pan</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon: gold "Z" generated as inline SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23111010'/><text y='78' x='50' text-anchor='middle' font-size='72' font-family='Georgia,serif' fill='%23c9a84c'>Z</text></svg>" />
 </head>
 <body>
+
+  <!-- Full screen confirmation overlay -->
+  <div id="sent-overlay">
+    <p>Yuhhh.<br />I'll hit you back.</p>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav id="navbar">
+    <a href="#about">About</a>
+    <a href="#biblestudy">Bible Study</a>
+    <a href="#faith">Foundation</a>
+    <a href="#projects">Building</a>
+    <a href="#ai">AI</a>
+    <a href="#athletics">Athletics</a>
+    <a href="#education">Education</a>
+    <a href="#photography">Photo / Video</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <header>
     <h1>Zachariah Pan</h1>
     <p class="tagline">Builder. Operator. Developer. In pursuit of Christ.</p>
   </header>
 
-  <section class="about">
+  <section class="about" id="about">
     <h2>About</h2>
     <p>
       Student at Bridgewater State University. Former college football player (WR/TE).
@@ -22,7 +43,7 @@
     </p>
   </section>
 
-  <section class="biblestudy">
+  <section class="biblestudy" id="biblestudy">
     <h2>Bible Study</h2>
     <div class="card">
       <h3>Every Thursday — 6:00 to 8:00 PM</h3>
@@ -35,7 +56,7 @@
     </div>
   </section>
 
-  <section class="faith">
+  <section class="faith" id="faith">
     <h2>Foundation</h2>
     <div class="card">
       <h3>Faith First</h3>
@@ -50,7 +71,7 @@
     </div>
   </section>
 
-  <section class="projects">
+  <section class="projects" id="projects">
     <h2>What I'm Building</h2>
     <div class="card">
       <h3>High-Ticket Sales</h3>
@@ -68,7 +89,7 @@
     </div>
   </section>
 
-  <section class="ai">
+  <section class="ai" id="ai">
     <h2>AI & Systems</h2>
     <div class="card">
       <h3>Building with AI</h3>
@@ -81,7 +102,7 @@
     </div>
   </section>
 
-  <section class="athletics">
+  <section class="athletics" id="athletics">
     <h2>Athletic Development</h2>
     <div class="card">
       <h3>Building Explosive Athletes</h3>
@@ -97,7 +118,7 @@
     </div>
   </section>
 
-  <section class="education">
+  <section class="education" id="education">
     <h2>Education</h2>
     <div class="card">
       <h3>Bridgewater State University — Expected 2027</h3>
@@ -110,7 +131,7 @@
     </div>
   </section>
 
-  <section class="photography">
+  <section class="photography" id="photography">
     <h2>Photography & Videography</h2>
     <div class="card">
       <h3>Visual Storytelling</h3>
@@ -127,10 +148,24 @@
     </div>
   </section>
 
-  <section class="links">
-    <h2>Connect</h2>
-    <a href="https://instagram.com/zach_pan10" class="btn" target="_blank">Instagram</a>
-    <a href="mailto:zachpan111@gmail.com" class="btn">Email</a>
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <form id="contact-form">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required />
+      </div>
+      <div class="form-group">
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <div class="links-row">
+      <a href="https://instagram.com/zach_pan10" class="btn" target="_blank">Instagram</a>
+      <a href="mailto:zachpan111@gmail.com" class="btn">Email</a>
+    </div>
   </section>
 
   <footer>
@@ -138,8 +173,8 @@
   </footer>
 
   <script>
+    // Scroll animations
     const sections = document.querySelectorAll('section, header');
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -149,8 +184,47 @@
         }
       });
     }, { threshold: 0.1 });
-
     sections.forEach(section => observer.observe(section));
+
+    // Navbar hide/show on scroll
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const current = window.scrollY;
+      if (current <= 0) {
+        document.getElementById('navbar').style.top = '0';
+      } else if (current < lastScroll) {
+        document.getElementById('navbar').style.top = '0';
+      } else {
+        document.getElementById('navbar').style.top = '-60px';
+      }
+      lastScroll = current;
+    });
+
+    // Contact form — submit without redirecting
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const status = document.getElementById('form-status');
+      const data = new FormData(form);
+
+      const response = await fetch('https://formspree.io/f/xdawjvev', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        const overlay = document.getElementById('sent-overlay');
+        overlay.classList.add('show');
+        setTimeout(() => {
+          overlay.classList.remove('show');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 2500);
+      } else {
+        alert('Something went wrong. Try emailing directly.');
+      }
+    });
   </script>
 </body>
 </html>
