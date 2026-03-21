@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,8 +8,10 @@
   <link rel="stylesheet" href="style.css" />
 
   <!-- Favicon: gold "Z" generated as inline SVG -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23111010'/><text y='78' x='50' text-anchor='middle' font-size='72' font-family='Georgia,serif' fill='%23c9a84c'>Z</text></svg>" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23111010'/><text y='78' x='50' text-anchor='middle' font-size='72' font-family='Georgia,serif' fill='%23c9a84c'>Z</text></svg>" />
 </head>
+
 <body>
 
   <!-- Full screen confirmation overlay -->
@@ -18,15 +21,18 @@
 
   <!-- Navigation Bar -->
   <nav id="navbar">
-    <a href="#about">About</a>
-    <a href="#biblestudy">Bible Study</a>
-    <a href="#faith">Foundation</a>
-    <a href="#projects">Building</a>
-    <a href="#ai">AI</a>
-    <a href="#athletics">Athletics</a>
-    <a href="#education">Education</a>
-    <a href="#photography">Photo / Video</a>
-    <a href="#contact">Contact</a>
+    <button id="menu-toggle" aria-label="Open menu">&#9776;</button>
+    <div id="nav-links">
+      <a href="#about">About</a>
+      <a href="#biblestudy">Bible Study</a>
+      <a href="#faith">Foundation</a>
+      <a href="#projects">Building</a>
+      <a href="#ai">AI</a>
+      <a href="#athletics">Athletics</a>
+      <a href="#education">Education</a>
+      <a href="#photography">Photo / Video</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
   <header>
@@ -200,15 +206,31 @@
       lastScroll = current;
     });
 
-    // Navbar show when cursor near top of screen
-    document.addEventListener('mousemove', (e) => {
-      if (e.clientY < 50) {
-        document.getElementById('navbar').style.top = '0';
-      }
+    // Navbar show when cursor near top of screen (desktop only)
+    if (window.matchMedia('(hover: hover)').matches) {
+      document.addEventListener('mousemove', (e) => {
+        if (e.clientY < 50) {
+          document.getElementById('navbar').style.top = '0';
+        }
+      });
+    }
+
+    // Mobile hamburger menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close menu when a nav link is tapped
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
     });
 
     // Contact form — submit without redirecting
-    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    document.getElementById('contact-form').addEventListener('submit', async function (e) {
       e.preventDefault();
       const form = e.target;
       const status = document.getElementById('form-status');
@@ -234,4 +256,5 @@
     });
   </script>
 </body>
+
 </html>
