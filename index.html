@@ -211,10 +211,16 @@
       lastScroll = current;
     });
 
-    // When any nav link is clicked, hide navbar and pause scroll detection
+    // When any nav link is clicked, pause scroll detection
+    // Desktop: keep navbar visible. Mobile: hide it.
+    const isDesktop = window.matchMedia('(hover: hover)').matches;
     document.querySelectorAll('#nav-links a').forEach(link => {
       link.addEventListener('click', () => {
-        document.getElementById('navbar').style.top = '-60px';
+        if (isDesktop) {
+          document.getElementById('navbar').style.top = '0';
+        } else {
+          document.getElementById('navbar').style.top = '-60px';
+        }
         navJumping = true;
         setTimeout(() => { navJumping = false; }, 800);
       });
