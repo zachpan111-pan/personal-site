@@ -194,7 +194,12 @@
 
     // Navbar hide/show on scroll
     let lastScroll = 0;
+    let navJumping = false;
     window.addEventListener('scroll', () => {
+      if (navJumping) {
+        lastScroll = window.scrollY;
+        return;
+      }
       const current = window.scrollY;
       if (current <= 0) {
         document.getElementById('navbar').style.top = '0';
@@ -204,6 +209,15 @@
         document.getElementById('navbar').style.top = '-60px';
       }
       lastScroll = current;
+    });
+
+    // When any nav link is clicked, hide navbar and pause scroll detection
+    document.querySelectorAll('#nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navbar').style.top = '-60px';
+        navJumping = true;
+        setTimeout(() => { navJumping = false; }, 800);
+      });
     });
 
     // Navbar show when cursor near top of screen (desktop only)

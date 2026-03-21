@@ -120,6 +120,10 @@
     font-size: 1rem;
     letter-spacing: 0.18em;
   }
+
+  section {
+    scroll-margin-top: 20px;
+  }
 }
 
 /* ── Contact Form ── */
