@@ -232,6 +232,7 @@ section {
   margin-bottom: 60px;
   padding-bottom: 60px;
   border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  scroll-margin-top: 70px;
 }
 
 section:last-of-type {
