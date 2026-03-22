@@ -1,3 +1,82 @@
+/* ── Language Overlay ── */
+#lang-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #111010;
+  background-image:
+    linear-gradient(135deg, transparent 40%, rgba(180, 140, 40, 0.03) 50%, transparent 60%),
+    linear-gradient(45deg,  transparent 30%, rgba(180, 140, 40, 0.02) 45%, transparent 55%),
+    linear-gradient(160deg, transparent 50%, rgba(180, 140, 40, 0.04) 60%, transparent 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+#lang-overlay.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#lang-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#lang-logo {
+  font-family: 'Georgia', serif;
+  font-size: 4.5rem;
+  color: #c9a84c;
+  text-shadow:
+    0 0 30px rgba(201, 168, 76, 0.6),
+    0 0 80px rgba(201, 168, 76, 0.3);
+  animation: pulse-gold 1.5s ease-in-out infinite alternate;
+  line-height: 1;
+}
+
+#lang-prompt {
+  font-family: 'Georgia', serif;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: #c9a84c;
+  opacity: 0.7;
+  margin: 0;
+}
+
+#lang-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 260px;
+  margin-top: 8px;
+}
+
+#lang-buttons button {
+  background: none;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  color: #b0a898;
+  font-family: 'Georgia', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 2px;
+}
+
+#lang-buttons button:hover {
+  border-color: #c9a84c;
+  color: #c9a84c;
+  background-color: rgba(201, 168, 76, 0.05);
+  box-shadow: 0 0 18px rgba(201, 168, 76, 0.15);
+}
+
 /* ── Sent Overlay ── */
 #sent-overlay {
   position: fixed;

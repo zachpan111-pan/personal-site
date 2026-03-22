@@ -6,43 +6,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zachariah Pan</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Favicon: gold "Z" generated as inline SVG -->
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23111010'/><text y='78' x='50' text-anchor='middle' font-size='72' font-family='Georgia,serif' fill='%23c9a84c'>Z</text></svg>" />
 </head>
 
 <body>
 
+  <!-- Language Selection Overlay -->
+  <div id="lang-overlay">
+    <div id="lang-box">
+      <div id="lang-logo">Z</div>
+      <p id="lang-prompt">Select Language</p>
+      <div id="lang-buttons">
+        <button data-lang="en">English</button>
+        <button data-lang="es">Español</button>
+        <button data-lang="pt">Português</button>
+        <button data-lang="zh-hans">中文（简体）</button>
+        <button data-lang="zh-hant">中文（繁體）</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Full screen confirmation overlay -->
   <div id="sent-overlay">
-    <p>Yuhhh.<br />I'll hit you back.</p>
+    <p data-i18n="sent-overlay-text">Yuhhh.<br />I'll hit you back.</p>
   </div>
 
   <!-- Navigation Bar -->
   <nav id="navbar">
     <button id="menu-toggle" aria-label="Open menu">&#9776;</button>
     <div id="nav-links">
-      <a href="#about">About</a>
-      <a href="#biblestudy">Bible Study</a>
-      <a href="#faith">Foundation</a>
-      <a href="#projects">Building</a>
-      <a href="#ai">AI</a>
-      <a href="#athletics">Athletics</a>
-      <a href="#education">Education</a>
-      <a href="#photography">Photo / Video</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" data-i18n="nav-about">About</a>
+      <a href="#biblestudy" data-i18n="nav-biblestudy">Bible Study</a>
+      <a href="#faith" data-i18n="nav-faith">Foundation</a>
+      <a href="#projects" data-i18n="nav-projects">Building</a>
+      <a href="#ai" data-i18n="nav-ai">AI</a>
+      <a href="#athletics" data-i18n="nav-athletics">Athletics</a>
+      <a href="#education" data-i18n="nav-education">Education</a>
+      <a href="#photography" data-i18n="nav-photography">Photo / Video</a>
+      <a href="#contact" data-i18n="nav-contact">Contact</a>
     </div>
   </nav>
 
   <header>
     <h1>Zachariah Pan</h1>
-    <p class="tagline">Builder. Operator. Developer. In pursuit of Christ.</p>
+    <p class="tagline" data-i18n="tagline">Builder. Operator. Developer. In pursuit of Christ.</p>
   </header>
 
   <section class="about" id="about">
-    <h2>About</h2>
-    <p>
+    <h2 data-i18n="about-h2">About</h2>
+    <p data-i18n="about-p">
       Student at Bridgewater State University. Former college football player (WR/TE).
       I build income, systems, and brands — all of it rooted in one thing: faith.
       Everything here exists to bring glory to God. That's the center. Everything else follows.
@@ -50,10 +63,10 @@
   </section>
 
   <section class="biblestudy" id="biblestudy">
-    <h2>Bible Study</h2>
+    <h2 data-i18n="biblestudy-h2">Bible Study</h2>
     <div class="card">
-      <h3>Every Thursday — 6:00 to 8:00 PM</h3>
-      <p>
+      <h3 data-i18n="biblestudy-h3">Every Thursday — 6:00 to 8:00 PM</h3>
+      <p data-i18n="biblestudy-p">
         First Floor Lounge, Weygand Hall — Bridgewater State University.
         <br /><br />
         Everyone is welcome. Our purpose is simple: to share the Word of God accurately,
@@ -63,10 +76,10 @@
   </section>
 
   <section class="faith" id="faith">
-    <h2>Foundation</h2>
+    <h2 data-i18n="faith-h2">Foundation</h2>
     <div class="card">
-      <h3>Faith First</h3>
-      <p>
+      <h3 data-i18n="faith-h3">Faith First</h3>
+      <p data-i18n="faith-p">
         Following Jesus isn't a part of my life — it's the foundation of it. Every decision,
         every project, every pursuit flows from that. I lead Bible studies focused on
         real understanding and real transformation, not performance.
@@ -78,17 +91,17 @@
   </section>
 
   <section class="projects" id="projects">
-    <h2>What I'm Building</h2>
+    <h2 data-i18n="projects-h2">What I'm Building</h2>
     <div class="card">
-      <h3>High-Ticket Sales</h3>
-      <p>
+      <h3 data-i18n="projects-h3-1">High-Ticket Sales</h3>
+      <p data-i18n="projects-p-1">
         DM setting and closing in the coaching and mentorship space. Focused on the full pipeline —
         booking calls, showing up, and converting. Building the skill of persuasion at a high level.
       </p>
     </div>
     <div class="card">
-      <h3>Dominium</h3>
-      <p>
+      <h3 data-i18n="projects-h3-2">Dominium</h3>
+      <p data-i18n="projects-p-2">
         A high-end fashion house built on identity, dominion, and meaning.
         Not trend-driven — built to carry a message and last. Rooted in faith, designed for those who move with purpose.
       </p>
@@ -96,10 +109,10 @@
   </section>
 
   <section class="ai" id="ai">
-    <h2>AI & Systems</h2>
+    <h2 data-i18n="ai-h2">AI & Systems</h2>
     <div class="card">
-      <h3>Building with AI</h3>
-      <p>
+      <h3 data-i18n="ai-h3">Building with AI</h3>
+      <p data-i18n="ai-p">
         I design and build AI-powered tools for businesses and my own operations — custom agents,
         automations, and systems that remove friction, scale output, and create real leverage.
         Whether it's streamlining a sales process, automating repetitive workflows, or building
@@ -109,10 +122,10 @@
   </section>
 
   <section class="athletics" id="athletics">
-    <h2>Athletic Development</h2>
+    <h2 data-i18n="athletics-h2">Athletic Development</h2>
     <div class="card">
-      <h3>Building Explosive Athletes</h3>
-      <p>
+      <h3 data-i18n="athletics-h3">Building Explosive Athletes</h3>
+      <p data-i18n="athletics-p">
         I develop athletes using real, proven data — grounded in biomechanics and the science of
         how the body is designed to move. The focus is efficiency: teaching athletes to work with
         their natural mechanics, not against them.
@@ -125,10 +138,10 @@
   </section>
 
   <section class="education" id="education">
-    <h2>Education</h2>
+    <h2 data-i18n="education-h2">Education</h2>
     <div class="card">
-      <h3>Bridgewater State University — Expected 2027</h3>
-      <p>
+      <h3 data-i18n="education-h3">Bridgewater State University — Expected 2027</h3>
+      <p data-i18n="education-p">
         Bachelor of Science in Business Management. 3.5 GPA.
         <br /><br />
         Relevant coursework: HR Management, Accounting, Business Law, Contract Law,
@@ -138,10 +151,10 @@
   </section>
 
   <section class="photography" id="photography">
-    <h2>Photography & Videography</h2>
+    <h2 data-i18n="photography-h2">Photography & Videography</h2>
     <div class="card">
-      <h3>Visual Storytelling</h3>
-      <p>
+      <h3 data-i18n="photography-h3">Visual Storytelling</h3>
+      <p data-i18n="photography-p">
         Photography and videography — sports events, concerts, church events, landscapes, short films, and more.
         My approach is creative and intentional — unique framing, raw emotion, and a
         distinct color grade that makes every shot feel like it belongs to something larger.
@@ -155,18 +168,18 @@
   </section>
 
   <section class="contact" id="contact">
-    <h2>Contact</h2>
+    <h2 data-i18n="contact-h2">Contact</h2>
     <form id="contact-form">
       <div class="form-group">
-        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="text" name="name" placeholder="Your Name" data-i18n-placeholder="placeholder-name" required />
       </div>
       <div class="form-group">
-        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="email" name="email" placeholder="Your Email" data-i18n-placeholder="placeholder-email" required />
       </div>
       <div class="form-group">
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <textarea name="message" rows="5" placeholder="Your Message" data-i18n-placeholder="placeholder-message" required></textarea>
       </div>
-      <button type="submit" class="btn">Send Message</button>
+      <button type="submit" class="btn" data-i18n="btn-send">Send Message</button>
     </form>
     <div class="links-row">
       <a href="https://instagram.com/zach_pan10" class="btn" target="_blank">Instagram</a>
@@ -175,10 +188,260 @@
   </section>
 
   <footer>
-    <p>© 2026 Zachariah Pan</p>
+    <p data-i18n="footer-text">© 2026 Zachariah Pan</p>
   </footer>
 
   <script>
+    // ── Translations ──
+    const translations = {
+      en: {
+        'nav-about': 'About',
+        'nav-biblestudy': 'Bible Study',
+        'nav-faith': 'Foundation',
+        'nav-projects': 'Building',
+        'nav-ai': 'AI',
+        'nav-athletics': 'Athletics',
+        'nav-education': 'Education',
+        'nav-photography': 'Photo / Video',
+        'nav-contact': 'Contact',
+        'tagline': 'Builder. Operator. Developer. In pursuit of Christ.',
+        'about-h2': 'About',
+        'about-p': 'Student at Bridgewater State University. Former college football player (WR/TE). I build income, systems, and brands — all of it rooted in one thing: faith. Everything here exists to bring glory to God. That\'s the center. Everything else follows.',
+        'biblestudy-h2': 'Bible Study',
+        'biblestudy-h3': 'Every Thursday — 6:00 to 8:00 PM',
+        'biblestudy-p': 'First Floor Lounge, Weygand Hall — Bridgewater State University.<br><br>Everyone is welcome. Our purpose is simple: to share the Word of God accurately, authentically, and lovingly. No performance. No pretense. Just truth.',
+        'faith-h2': 'Foundation',
+        'faith-h3': 'Faith First',
+        'faith-p': 'Following Jesus isn\'t a part of my life — it\'s the foundation of it. Every decision, every project, every pursuit flows from that. I lead Bible studies focused on real understanding and real transformation, not performance.<br><br><em>"But seek first the kingdom of God and his righteousness, and all these things will be added to you."</em> — Matthew 6:33',
+        'projects-h2': 'What I\'m Building',
+        'projects-h3-1': 'High-Ticket Sales',
+        'projects-p-1': 'DM setting and closing in the coaching and mentorship space. Focused on the full pipeline — booking calls, showing up, and converting. Building the skill of persuasion at a high level.',
+        'projects-h3-2': 'Dominium',
+        'projects-p-2': 'A high-end fashion house built on identity, dominion, and meaning. Not trend-driven — built to carry a message and last. Rooted in faith, designed for those who move with purpose.',
+        'ai-h2': 'AI & Systems',
+        'ai-h3': 'Building with AI',
+        'ai-p': 'I design and build AI-powered tools for businesses and my own operations — custom agents, automations, and systems that remove friction, scale output, and create real leverage. Whether it\'s streamlining a sales process, automating repetitive workflows, or building tools from the ground up, the goal is always the same: make the system do the work.',
+        'athletics-h2': 'Athletic Development',
+        'athletics-h3': 'Building Explosive Athletes',
+        'athletics-p': 'I develop athletes using real, proven data — grounded in biomechanics and the science of how the body is designed to move. The focus is efficiency: teaching athletes to work with their natural mechanics, not against them.<br><br>Primarily working with football and track athletes. The principles are transferable — if the body moves better, the athlete performs better. Speed, power, and explosiveness built from the ground up.',
+        'education-h2': 'Education',
+        'education-h3': 'Bridgewater State University — Expected 2027',
+        'education-p': 'Bachelor of Science in Business Management. 3.5 GPA.<br><br>Relevant coursework: HR Management, Accounting, Business Law, Contract Law, Management Information Systems, Statistics.',
+        'photography-h2': 'Photography & Videography',
+        'photography-h3': 'Visual Storytelling',
+        'photography-p': 'Photography and videography — sports events, concerts, church events, landscapes, short films, and more. My approach is creative and intentional — unique framing, raw emotion, and a distinct color grade that makes every shot feel like it belongs to something larger.<br><br>Past work includes Malden High track events, Bridgewater State football, short film projects, and artists including Brandon Coke and other independent artists.<br><br>I don\'t just document moments. I look for the ones that tell the truth about what\'s happening.',
+        'contact-h2': 'Contact',
+        'placeholder-name': 'Your Name',
+        'placeholder-email': 'Your Email',
+        'placeholder-message': 'Your Message',
+        'btn-send': 'Send Message',
+        'footer-text': '© 2026 Zachariah Pan',
+        'sent-overlay-text': 'Yuhhh.<br>I\'ll hit you back.'
+      },
+      es: {
+        'nav-about': 'Sobre Mí',
+        'nav-biblestudy': 'Estudio Bíblico',
+        'nav-faith': 'Fundamento',
+        'nav-projects': 'Construyendo',
+        'nav-ai': 'IA',
+        'nav-athletics': 'Atletismo',
+        'nav-education': 'Educación',
+        'nav-photography': 'Foto / Video',
+        'nav-contact': 'Contacto',
+        'tagline': 'Constructor. Operador. Desarrollador. En busca de Cristo.',
+        'about-h2': 'Sobre Mí',
+        'about-p': 'Estudiante en Bridgewater State University. Ex jugador universitario de fútbol americano (WR/TE). Construyo ingresos, sistemas y marcas — todo enraizado en una cosa: la fe. Todo aquí existe para dar gloria a Dios. Eso es el centro. Todo lo demás sigue.',
+        'biblestudy-h2': 'Estudio Bíblico',
+        'biblestudy-h3': 'Todos los jueves — 6:00 a 8:00 PM',
+        'biblestudy-p': 'Sala del Primer Piso, Weygand Hall — Bridgewater State University.<br><br>Todos son bienvenidos. Nuestro propósito es simple: compartir la Palabra de Dios con precisión, autenticidad y amor. Sin actuaciones. Sin pretensiones. Solo verdad.',
+        'faith-h2': 'Fundamento',
+        'faith-h3': 'La Fe Primero',
+        'faith-p': 'Seguir a Jesús no es una parte de mi vida — es el fundamento de ella. Cada decisión, cada proyecto, cada búsqueda fluye de eso. Dirijo estudios bíblicos enfocados en la comprensión real y la transformación real, no en el rendimiento.<br><br><em>"Más bien, busquen primeramente el reino de Dios y su justicia, y todas estas cosas les serán añadidas."</em> — Mateo 6:33',
+        'projects-h2': 'Lo Que Estoy Construyendo',
+        'projects-h3-1': 'Ventas de Alto Valor',
+        'projects-p-1': 'Configuración de mensajes directos y cierre de ventas en el espacio de coaching y mentoría. Enfocado en el pipeline completo — reservar llamadas, presentarse y convertir. Desarrollando la habilidad de persuasión a un alto nivel.',
+        'projects-h3-2': 'Dominium',
+        'projects-p-2': 'Una casa de moda de lujo construida sobre identidad, dominio y significado. No impulsada por tendencias — construida para llevar un mensaje y durar. Arraigada en la fe, diseñada para quienes se mueven con propósito.',
+        'ai-h2': 'IA y Sistemas',
+        'ai-h3': 'Construyendo con IA',
+        'ai-p': 'Diseño y construyo herramientas impulsadas por IA para negocios y mis propias operaciones — agentes personalizados, automatizaciones y sistemas que eliminan fricciones, escalan la producción y crean apalancamiento real. Ya sea optimizando un proceso de ventas, automatizando flujos de trabajo repetitivos o construyendo herramientas desde cero, el objetivo siempre es el mismo: hacer que el sistema haga el trabajo.',
+        'athletics-h2': 'Desarrollo Atlético',
+        'athletics-h3': 'Formando Atletas Explosivos',
+        'athletics-p': 'Desarrollo atletas usando datos reales y probados — fundamentados en biomecánica y la ciencia de cómo el cuerpo está diseñado para moverse. El enfoque es la eficiencia: enseñar a los atletas a trabajar con su mecánica natural, no en contra de ella.<br><br>Principalmente trabajando con atletas de fútbol americano y atletismo. Los principios son transferibles — si el cuerpo se mueve mejor, el atleta rinde mejor. Velocidad, potencia y explosividad construidas desde cero.',
+        'education-h2': 'Educación',
+        'education-h3': 'Bridgewater State University — Graduación Esperada 2027',
+        'education-p': 'Licenciatura en Ciencias en Gestión Empresarial. GPA 3.5.<br><br>Cursos relevantes: Gestión de RRHH, Contabilidad, Derecho Empresarial, Derecho Contractual, Sistemas de Información de Gestión, Estadística.',
+        'photography-h2': 'Fotografía y Videografía',
+        'photography-h3': 'Narrativa Visual',
+        'photography-p': 'Fotografía y videografía — eventos deportivos, conciertos, eventos de iglesia, paisajes, cortometrajes y más. Mi enfoque es creativo e intencional — encuadres únicos, emoción en bruto y una gradación de color distintiva que hace que cada toma parezca parte de algo más grande.<br><br>Trabajos anteriores incluyen eventos de atletismo de Malden High, fútbol americano de Bridgewater State, proyectos de cortometrajes y artistas como Brandon Coke y otros artistas independientes.<br><br>No solo documento momentos. Busco los que dicen la verdad sobre lo que está pasando.',
+        'contact-h2': 'Contacto',
+        'placeholder-name': 'Tu Nombre',
+        'placeholder-email': 'Tu Correo Electrónico',
+        'placeholder-message': 'Tu Mensaje',
+        'btn-send': 'Enviar Mensaje',
+        'footer-text': '© 2026 Zachariah Pan',
+        'sent-overlay-text': 'Yuhhh.<br>Te respondo.'
+      },
+      pt: {
+        'nav-about': 'Sobre',
+        'nav-biblestudy': 'Estudo Bíblico',
+        'nav-faith': 'Fundamento',
+        'nav-projects': 'Construindo',
+        'nav-ai': 'IA',
+        'nav-athletics': 'Atletismo',
+        'nav-education': 'Educação',
+        'nav-photography': 'Foto / Vídeo',
+        'nav-contact': 'Contato',
+        'tagline': 'Construtor. Operador. Desenvolvedor. Em busca de Cristo.',
+        'about-h2': 'Sobre',
+        'about-p': 'Estudante na Bridgewater State University. Ex jogador universitário de futebol americano (WR/TE). Construo renda, sistemas e marcas — tudo enraizado em uma coisa: a fé. Tudo aqui existe para glorificar a Deus. Esse é o centro. Todo o resto segue.',
+        'biblestudy-h2': 'Estudo Bíblico',
+        'biblestudy-h3': 'Todas as quintas-feiras — 18h às 20h',
+        'biblestudy-p': 'Sala de Estar do Primeiro Andar, Weygand Hall — Bridgewater State University.<br><br>Todos são bem-vindos. Nosso propósito é simples: compartilhar a Palavra de Deus com precisão, autenticidade e amor. Sem performance. Sem pretensão. Apenas verdade.',
+        'faith-h2': 'Fundamento',
+        'faith-h3': 'A Fé em Primeiro Lugar',
+        'faith-p': 'Seguir Jesus não é uma parte da minha vida — é o alicerce dela. Cada decisão, cada projeto, cada busca flui disso. Lidero estudos bíblicos focados em compreensão real e transformação real, não em performance.<br><br><em>"Mas buscai primeiro o reino de Deus e a sua justiça, e todas essas coisas vos serão acrescentadas."</em> — Mateus 6:33',
+        'projects-h2': 'O Que Estou Construindo',
+        'projects-h3-1': 'Vendas de Alto Valor',
+        'projects-p-1': 'Configuração de DMs e fechamento de vendas no espaço de coaching e mentoria. Focado no pipeline completo — agendar chamadas, comparecer e converter. Desenvolvendo a habilidade de persuasão em alto nível.',
+        'projects-h3-2': 'Dominium',
+        'projects-p-2': 'Uma casa de moda de luxo construída sobre identidade, domínio e significado. Não movida por tendências — construída para carregar uma mensagem e durar. Enraizada na fé, projetada para aqueles que se movem com propósito.',
+        'ai-h2': 'IA e Sistemas',
+        'ai-h3': 'Construindo com IA',
+        'ai-p': 'Projeto e construo ferramentas movidas por IA para empresas e minhas próprias operações — agentes personalizados, automações e sistemas que removem atrito, escalam a produção e criam alavancagem real. Seja otimizando um processo de vendas, automatizando fluxos de trabalho repetitivos ou construindo ferramentas do zero, o objetivo é sempre o mesmo: fazer o sistema trabalhar.',
+        'athletics-h2': 'Desenvolvimento Atlético',
+        'athletics-h3': 'Formando Atletas Explosivos',
+        'athletics-p': 'Desenvolvo atletas usando dados reais e comprovados — fundamentados em biomecânica e na ciência de como o corpo foi projetado para se mover. O foco é a eficiência: ensinar atletas a trabalhar com sua mecânica natural, não contra ela.<br><br>Trabalhando principalmente com atletas de futebol americano e atletismo. Os princípios são transferíveis — se o corpo se move melhor, o atleta performa melhor. Velocidade, força e explosividade construídas do zero.',
+        'education-h2': 'Educação',
+        'education-h3': 'Bridgewater State University — Conclusão Prevista 2027',
+        'education-p': 'Bacharelado em Ciências em Gestão Empresarial. GPA 3.5.<br><br>Disciplinas relevantes: Gestão de RH, Contabilidade, Direito Empresarial, Direito Contratual, Sistemas de Informação Gerencial, Estatística.',
+        'photography-h2': 'Fotografia e Videografia',
+        'photography-h3': 'Narrativa Visual',
+        'photography-p': 'Fotografia e videografia — eventos esportivos, shows, eventos religiosos, paisagens, curtas-metragens e muito mais. Minha abordagem é criativa e intencional — enquadramentos únicos, emoção bruta e uma gradação de cor distinta que faz cada foto parecer pertencer a algo maior.<br><br>Trabalhos anteriores incluem eventos de atletismo do Malden High, futebol americano da Bridgewater State, projetos de curtas-metragens e artistas como Brandon Coke e outros artistas independentes.<br><br>Não apenas documento momentos. Procuro aqueles que contam a verdade sobre o que está acontecendo.',
+        'contact-h2': 'Contato',
+        'placeholder-name': 'Seu Nome',
+        'placeholder-email': 'Seu E-mail',
+        'placeholder-message': 'Sua Mensagem',
+        'btn-send': 'Enviar Mensagem',
+        'footer-text': '© 2026 Zachariah Pan',
+        'sent-overlay-text': 'Yuhhh.<br>Eu te respondo.'
+      },
+      'zh-hans': {
+        'nav-about': '关于',
+        'nav-biblestudy': '圣经学习',
+        'nav-faith': '根基',
+        'nav-projects': '正在构建',
+        'nav-ai': '人工智能',
+        'nav-athletics': '运动',
+        'nav-education': '教育',
+        'nav-photography': '摄影 / 摄像',
+        'nav-contact': '联系',
+        'tagline': '建设者。运营者。开发者。追寻基督。',
+        'about-h2': '关于',
+        'about-p': '布里奇沃特州立大学学生。前大学美式足球运动员（WR/TE）。我建立收入、系统和品牌——一切都植根于一件事：信仰。这里的一切都是为了荣耀上帝。这是核心，其他一切都由此而来。',
+        'biblestudy-h2': '圣经学习',
+        'biblestudy-h3': '每周四 — 下午6:00至8:00',
+        'biblestudy-p': '布里奇沃特州立大学韦根厅一楼休息室。<br><br>欢迎所有人。我们的目的很简单：准确、真实、充满爱地分享上帝的话语。无需表演，无需伪装，只有真理。',
+        'faith-h2': '根基',
+        'faith-h3': '信仰为先',
+        'faith-p': '跟随耶稣不是我生命的一部分——而是我生命的根基。每一个决定、每一个项目、每一次追求都由此而来。我带领圣经学习，专注于真正的理解和真正的转化，而非表演。<br><br><em>"你们要先求他的国和他的义，这些东西都要加给你们了。"</em> — 马太福音 6:33',
+        'projects-h2': '正在构建的事业',
+        'projects-h3-1': '高价值销售',
+        'projects-p-1': '在教练和导师领域进行私信开发和成交。专注于完整流程——预约通话、准时出席和转化。在高水平上培养说服力。',
+        'projects-h3-2': 'Dominium',
+        'projects-p-2': '一个建立在身份、主权和意义之上的高端时装品牌。不受潮流驱动——为传递信息而建，经久耐用。植根于信仰，为有目的地行动的人而设计。',
+        'ai-h2': '人工智能与系统',
+        'ai-h3': '借助 AI 构建',
+        'ai-p': '我为企业和我自己的业务设计和构建AI驱动的工具——定制代理、自动化和系统，消除摩擦、扩大产出并创造真正的杠杆。无论是优化销售流程、自动化重复性工作流程，还是从零开始构建工具，目标始终如一：让系统来完成工作。',
+        'athletics-h2': '运动发展',
+        'athletics-h3': '培养爆发力运动员',
+        'athletics-p': '我使用真实、经过验证的数据来培养运动员——以生物力学和身体设计运动方式的科学为基础。重点是效率：教运动员与自然力学协同工作，而非对抗它。<br><br>主要与美式足球和田径运动员合作。原则是通用的——如果身体移动得更好，运动员的表现就会更好。从零开始建立速度、力量和爆发力。',
+        'education-h2': '教育',
+        'education-h3': '布里奇沃特州立大学 — 预计2027年毕业',
+        'education-p': '工商管理理学士。GPA 3.5。<br><br>相关课程：人力资源管理、会计、商业法、合同法、管理信息系统、统计学。',
+        'photography-h2': '摄影与摄像',
+        'photography-h3': '视觉叙事',
+        'photography-p': '摄影和摄像——体育赛事、音乐会、教会活动、风景、短片等。我的方法是创意性和有意识的——独特的构图、原始的情感和独特的色调，使每张照片都感觉属于更大的作品。<br><br>过去的作品包括马尔登高中田径赛事、布里奇沃特州立大学美式足球、短片项目以及包括Brandon Coke在内的独立艺术家。<br><br>我不只是记录时刻，我寻找那些真实地反映正在发生的事情的时刻。',
+        'contact-h2': '联系',
+        'placeholder-name': '您的姓名',
+        'placeholder-email': '您的邮箱',
+        'placeholder-message': '您的留言',
+        'btn-send': '发送消息',
+        'footer-text': '© 2026 Zachariah Pan',
+        'sent-overlay-text': '收到了。<br>我会回复您。'
+      },
+      'zh-hant': {
+        'nav-about': '關於',
+        'nav-biblestudy': '聖經學習',
+        'nav-faith': '根基',
+        'nav-projects': '正在構建',
+        'nav-ai': '人工智能',
+        'nav-athletics': '運動',
+        'nav-education': '教育',
+        'nav-photography': '攝影 / 攝像',
+        'nav-contact': '聯絡',
+        'tagline': '建設者。運營者。開發者。追尋基督。',
+        'about-h2': '關於',
+        'about-p': '布里奇沃特州立大學學生。前大學美式足球運動員（WR/TE）。我建立收入、系統和品牌——一切都植根於一件事：信仰。這裡的一切都是為了榮耀上帝。這是核心，其他一切都由此而來。',
+        'biblestudy-h2': '聖經學習',
+        'biblestudy-h3': '每週四 — 下午6:00至8:00',
+        'biblestudy-p': '布里奇沃特州立大學韋根廳一樓休息室。<br><br>歡迎所有人。我們的目的很簡單：準確、真實、充滿愛地分享上帝的話語。無需表演，無需偽裝，只有真理。',
+        'faith-h2': '根基',
+        'faith-h3': '信仰為先',
+        'faith-p': '跟隨耶穌不是我生命的一部分——而是我生命的根基。每一個決定、每一個項目、每一次追求都由此而來。我帶領聖經學習，專注於真正的理解和真正的轉化，而非表演。<br><br><em>「你們要先求他的國和他的義，這些東西都要加給你們了。」</em> — 馬太福音 6:33',
+        'projects-h2': '正在構建的事業',
+        'projects-h3-1': '高價值銷售',
+        'projects-p-1': '在教練和導師領域進行私信開發和成交。專注於完整流程——預約通話、準時出席和轉化。在高水平上培養說服力。',
+        'projects-h3-2': 'Dominium',
+        'projects-p-2': '一個建立在身份、主權和意義之上的高端時裝品牌。不受潮流驅動——為傳遞信息而建，經久耐用。植根於信仰，為有目的地行動的人而設計。',
+        'ai-h2': '人工智能與系統',
+        'ai-h3': '借助 AI 構建',
+        'ai-p': '我為企業和我自己的業務設計和構建AI驅動的工具——定制代理、自動化和系統，消除摩擦、擴大產出並創造真正的槓桿。無論是優化銷售流程、自動化重複性工作流程，還是從零開始構建工具，目標始終如一：讓系統來完成工作。',
+        'athletics-h2': '運動發展',
+        'athletics-h3': '培養爆發力運動員',
+        'athletics-p': '我使用真實、經過驗證的數據來培養運動員——以生物力學和身體設計運動方式的科學為基礎。重點是效率：教運動員與自然力學協同工作，而非對抗它。<br><br>主要與美式足球和田徑運動員合作。原則是通用的——如果身體移動得更好，運動員的表現就會更好。從零開始建立速度、力量和爆發力。',
+        'education-h2': '教育',
+        'education-h3': '布里奇沃特州立大學 — 預計2027年畢業',
+        'education-p': '工商管理理學士。GPA 3.5。<br><br>相關課程：人力資源管理、會計、商業法、合同法、管理信息系統、統計學。',
+        'photography-h2': '攝影與攝像',
+        'photography-h3': '視覺敘事',
+        'photography-p': '攝影和攝像——體育賽事、音樂會、教會活動、風景、短片等。我的方法是創意性和有意識的——獨特的構圖、原始的情感和獨特的色調，使每張照片都感覺屬於更大的作品。<br><br>過去的作品包括馬爾登高中田徑賽事、布里奇沃特州立大學美式足球、短片項目以及包括Brandon Coke在內的獨立藝術家。<br><br>我不只是記錄時刻，我尋找那些真實地反映正在發生的事情的時刻。',
+        'contact-h2': '聯絡',
+        'placeholder-name': '您的姓名',
+        'placeholder-email': '您的電郵',
+        'placeholder-message': '您的留言',
+        'btn-send': '發送訊息',
+        'footer-text': '© 2026 Zachariah Pan',
+        'sent-overlay-text': '收到了。<br>我會回覆您的。'
+      }
+    };
+
+    // Apply chosen language to the page
+    function applyLanguage(lang) {
+      const t = translations[lang];
+      if (!t) return;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (t[key] !== undefined) el.placeholder = t[key];
+      });
+      document.documentElement.lang = lang;
+    }
+
+    // Language picker buttons
+    document.querySelectorAll('#lang-buttons button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        applyLanguage(lang);
+        const overlay = document.getElementById('lang-overlay');
+        overlay.classList.add('hide');
+        setTimeout(() => { overlay.style.display = 'none'; }, 700);
+      });
+    });
+
     // Scroll animations
     const sections = document.querySelectorAll('section, header');
     const observer = new IntersectionObserver((entries) => {
@@ -235,7 +498,6 @@
     });
 
     // When any nav link is clicked, pause scroll detection
-    // Desktop: keep navbar visible. Mobile: hide it.
     const isDesktop = window.matchMedia('(hover: hover)').matches;
     document.querySelectorAll('#nav-links a').forEach(link => {
       link.addEventListener('click', () => {
@@ -253,7 +515,6 @@
     document.getElementById('contact-form').addEventListener('submit', async function (e) {
       e.preventDefault();
       const form = e.target;
-      const status = document.getElementById('form-status');
       const data = new FormData(form);
 
       const response = await fetch('https://formspree.io/f/xdawjvev', {
