@@ -27,6 +27,9 @@
     </div>
   </div>
 
+  <!-- Language Switcher Button -->
+  <button id="lang-switcher" aria-label="Change language">EN</button>
+
   <!-- Full screen confirmation overlay -->
   <div id="sent-overlay">
     <p data-i18n="sent-overlay-text">Yuhhh.<br />I'll hit you back.</p>
@@ -431,15 +434,32 @@
       document.documentElement.lang = lang;
     }
 
+    // Labels shown on the switcher button for each language
+    const langLabels = {
+      'en': 'EN',
+      'es': 'ES',
+      'pt': 'PT',
+      'zh-hans': '简',
+      'zh-hant': '繁'
+    };
+
     // Language picker buttons
     document.querySelectorAll('#lang-buttons button').forEach(btn => {
       btn.addEventListener('click', () => {
         const lang = btn.getAttribute('data-lang');
         applyLanguage(lang);
+        document.getElementById('lang-switcher').textContent = langLabels[lang] || 'EN';
         const overlay = document.getElementById('lang-overlay');
         overlay.classList.add('hide');
         setTimeout(() => { overlay.style.display = 'none'; }, 700);
       });
+    });
+
+    // Switcher button reopens the overlay
+    document.getElementById('lang-switcher').addEventListener('click', () => {
+      const overlay = document.getElementById('lang-overlay');
+      overlay.style.display = 'flex';
+      requestAnimationFrame(() => { overlay.classList.remove('hide'); });
     });
 
     // Scroll animations
