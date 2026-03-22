@@ -28,7 +28,13 @@
   </div>
 
   <!-- Language Switcher Button -->
-  <button id="lang-switcher" aria-label="Change language">EN</button>
+  <button id="lang-switcher" aria-label="Change language">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="2" y1="12" x2="22" y2="12"/>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </svg>
+  </button>
 
   <!-- Full screen confirmation overlay -->
   <div id="sent-overlay">
@@ -448,7 +454,6 @@
       btn.addEventListener('click', () => {
         const lang = btn.getAttribute('data-lang');
         applyLanguage(lang);
-        document.getElementById('lang-switcher').textContent = langLabels[lang] || 'EN';
         const overlay = document.getElementById('lang-overlay');
         overlay.classList.add('hide');
         setTimeout(() => { overlay.style.display = 'none'; }, 700);
